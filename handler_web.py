@@ -12,7 +12,7 @@ from insurance.Insurance import Insurance
 
 model = xgb.XGBClassifier()
 
-model.load_model('/home/guilherme/Documentos/repos/pa_health_cross_sell/projeto/model/model_cross_sell.json')
+model.load_model('model/model_cross_sell.json')
 
 #start api
 app = Flask(__name__)
