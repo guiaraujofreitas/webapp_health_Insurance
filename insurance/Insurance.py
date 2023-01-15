@@ -86,7 +86,7 @@ class Insurance(object):
                         'policy_sales_channel','previously_insured']
         
         return df3[cols_selected]
-        print('df3 done')
+    print('df3 done')
     
     def get_prediction(self,model, original_data,test_data):
         
@@ -100,5 +100,5 @@ class Insurance(object):
         original_data = original_data.sort_values(by='proba',ascending=False)
             
         return original_data.to_json(orient = 'records',date_format = 'iso')
-        print('df4 -model done')
+    print('df4 -model done')
         
