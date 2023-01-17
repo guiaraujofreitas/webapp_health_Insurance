@@ -1,5 +1,4 @@
 import os
-import pickle
 import pandas as pd
 import requests
 import xgboost as xgb
