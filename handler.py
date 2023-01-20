@@ -9,7 +9,7 @@ from flask import Flask, request, Response
 #collecting the past archive and imnport class
 from insurance.Insurance import Insurance
 
-model = pickle.load(open('model_cross_sell.pkl','rb') )
+model = pickle.load(open('model/model_cross_sell.pkl','rb') )
 
 #model = xgb.XGBClassifier()
 
