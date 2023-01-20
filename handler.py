@@ -8,10 +8,11 @@ from flask import Flask, request, Response
 #collecting the past archive and imnport class
 from insurance.Insurance import Insurance
 
+model = pickle.load(open('/home/guilherme/Documentos/repos/pa_health_cross_sell/projeto/model/model_cross_sell.pkl','rb') )
 
-model = xgb.XGBClassifier()
+#model = xgb.XGBClassifier()
 
-model.load_model('model/model_cross_sell.json')
+#model.load_model('model/model_cross_sell.json')
 
 #start api
 app = Flask(__name__)
