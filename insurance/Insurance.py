@@ -17,8 +17,7 @@ class Insurance(object):
         self.target_gender_sclaer      =   pickle.load(open (self.home_path + 'parameter/target_gender_scaler.pkl','rb' ) )
         self.age_scaler                =   pickle.load(open (self.home_path + 'parameter/age_scaler.pkl','rb') )
         self.vintage_scaler            =   pickle.load(open (self.home_path + 'parameter/vintage_scaler.pkl','rb') )
-
-        
+   
     def cleaning_data(self,df1):
         df1['region_code']    = df1['region_code'].astype(int)
 
@@ -27,7 +26,6 @@ class Insurance(object):
         df1['policy_sales_channel'] = df1['policy_sales_channel'].astype(int)
         
         return df1
-    print('df1 done')
 
     def feature_engineering(self,df2):
         #rename the rows of colum vehicle age
@@ -46,7 +44,7 @@ class Insurance(object):
         df2['vintage'] = df2['vintage'].astype('int')
 
         return df2
-    print('df2 done')
+    
 
     def data_preparation(self,df3):
         
@@ -86,7 +84,7 @@ class Insurance(object):
                         'policy_sales_channel','previously_insured']
         
         return df3[cols_selected]
-    print('df3 done')
+    
     
     def get_prediction(self,model, original_data,test_data):
         
@@ -100,5 +98,5 @@ class Insurance(object):
         original_data = original_data.sort_values(by='proba',ascending=False)
             
         return original_data.to_json(orient = 'records',date_format = 'iso')
-    print('df4 -model done')
+    
         
