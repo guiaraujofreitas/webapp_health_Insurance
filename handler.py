@@ -2,7 +2,8 @@ import os
 import pickle
 import pandas as pd
 import requests
-import xgboost as xgb
+#import xgboost as xgb
+from sklearn.neighbors import KNeighborsClassifier
 from flask import Flask, request, Response
 
 
