@@ -2,15 +2,15 @@ import os
 import pickle
 import pandas as pd
 import requests
-#import xgboost as xgb
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.linear_model import LogisticRegression
+
 from flask import Flask, request, Response
 
 
 #collecting the past archive and imnport class
 from insurance.Insurance import Insurance
 
-model = pickle.load(open('model/knn_cross_sell.pkl','rb') )
+model = pickle.load(open('model/lr_cross_sell.pkl','rb') )
 
 #model = xgb.XGBClassifier()
 
