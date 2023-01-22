@@ -2,6 +2,7 @@ import os
 import pickle
 import pandas as pd
 import requests
+import xgboost as xgb
 from sklearn.linear_model import LogisticRegression
 
 from flask import Flask, request, Response
@@ -10,11 +11,11 @@ from flask import Flask, request, Response
 #collecting the past archive and imnport class
 from insurance.Insurance import Insurance
 
-model = pickle.load(open('model/lr_cross_sell.pkl','rb') )
+#model = pickle.load(open('model/lr_cross_sell.pkl','rb') )
 
-#model = xgb.XGBClassifier()
+model = xgb.XGBClassifier()
 
-#model.load_model('model/model_cross_sell.json')
+model.load_model('model/model_cross_sell.json')
 
 #start api
 app = Flask(__name__)
